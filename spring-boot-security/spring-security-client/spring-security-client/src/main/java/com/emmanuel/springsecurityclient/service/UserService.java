@@ -6,14 +6,19 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.emmanuel.springsecurityclient.entity.User;
+import com.emmanuel.springsecurityclient.entity.VerificationToken;
 import com.emmanuel.springsecurityclient.model.UserModel;
 import com.emmanuel.springsecurityclient.repository.UserRepositoryI;
+import com.emmanuel.springsecurityclient.repository.VerificationTokenRepository;
 
 @Service
 public class UserService implements UserServiceI {
 
     @Autowired
     UserRepositoryI userRepository;
+
+    @Autowired
+    VerificationTokenRepository verificationTokenRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -30,5 +35,11 @@ public class UserService implements UserServiceI {
         userRepository.save(user);
 
         return user;
+    }
+
+    @Override
+    public void saveVerificationForUser(String token, User user) {
+       VerificationToken verificationToken = new VerificationToken(user,token);
+       verificationTokenRepository.save(verificationToken);
     }
 }

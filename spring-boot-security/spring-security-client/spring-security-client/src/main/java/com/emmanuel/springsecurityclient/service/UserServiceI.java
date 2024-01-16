@@ -6,5 +6,7 @@ import com.emmanuel.springsecurityclient.model.UserModel;
 public interface UserServiceI {
 
     User registerUser(UserModel userModel);
+
+    void saveVerificationForUser(String token, User user);
     
 }
