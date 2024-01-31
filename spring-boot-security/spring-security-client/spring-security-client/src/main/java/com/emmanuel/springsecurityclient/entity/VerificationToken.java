@@ -43,10 +43,10 @@ public class VerificationToken {
         this.expirationTime = calcateExpirationDate(EXPIRATION_TIME);
     }
 
-    private Date calcateExpirationDate(int expirationTime2) {
+    private Date calcateExpirationDate(int expirationTime) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(new Date().getTime());
-        calendar.add(Calendar.MINUTE, expirationTime2);
+        calendar.add(Calendar.MINUTE, expirationTime);
         return new Date(calendar.getTime().getTime());
     }
 

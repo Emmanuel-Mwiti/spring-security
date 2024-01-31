@@ -2,7 +2,7 @@ package com.emmanuel.springsecurityclient.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
-// import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.stereotype.Service;
 
 import com.emmanuel.springsecurityclient.entity.User;
@@ -18,9 +18,10 @@ public class UserService implements UserServiceI {
     UserRepositoryI userRepository;
 
     @Autowired
+    // VerificationTokenRepository verificationTokenRepository;
     VerificationTokenRepository verificationTokenRepository;
 
-    @Autowired
+    // @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Override
@@ -39,7 +40,7 @@ public class UserService implements UserServiceI {
 
     @Override
     public void saveVerificationForUser(String token, User user) {
-       VerificationToken verificationToken = new VerificationToken(user,token);
-       verificationTokenRepository.save(verificationToken);
+        VerificationToken verificationToken = new VerificationToken(user, token);
+        verificationTokenRepository.save(verificationToken);
     }
 }
