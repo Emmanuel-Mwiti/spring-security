@@ -8,6 +8,9 @@ public class SpringSecurityClientApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringSecurityClientApplication.class, args);
+		System.out.println("The application has started,");
+		System.out.println("Here is checking the branch concept");
+		System.out.println("Here is checking the branch concept");
 	}
 
 }
