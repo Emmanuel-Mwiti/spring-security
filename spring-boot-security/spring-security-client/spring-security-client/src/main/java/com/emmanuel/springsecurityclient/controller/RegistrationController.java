@@ -33,6 +33,7 @@ public class RegistrationController {
     public String registerUser(@RequestBody UserModel userModel, final HttpServletRequest request) {
         User user = userService.registerUser(userModel);
         // Once the user has registered is when now we want to create publish the event
+        // Are you using events to have
         publisher.publishEvent(new RegistrationCompleteEvent(user, applicationUrl(request)));
         return "success";
 
