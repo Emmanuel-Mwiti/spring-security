@@ -25,7 +25,7 @@ public class RegistrationController {
     private ApplicationEventPublisher publisher;
 
     @GetMapping("/hello")
-    public String getHello(){
+    public String getHello() {
         return "Hello Manu";
     }
 
