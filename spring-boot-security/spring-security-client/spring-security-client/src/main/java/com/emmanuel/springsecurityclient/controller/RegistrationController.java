@@ -25,7 +25,7 @@ public class RegistrationController {
     private ApplicationEventPublisher publisher;
 
     @GetMapping("/hello")
-    public String getHello(){
+    public String getHello() {
         return "Hello Manu";
     }
 
@@ -39,6 +39,7 @@ public class RegistrationController {
     }
 
     private String applicationUrl(HttpServletRequest request) {
+        System.out.println(request.getContextPath());
         return "http://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
     }
 

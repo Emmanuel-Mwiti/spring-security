@@ -31,7 +31,7 @@ public class VerificationToken {
     private User user;
 
     public VerificationToken(User user, String token) {
-        super();
+        this();
         this.token = token;
         this.user = user;
         this.expirationTime = calcateExpirationDate(EXPIRATION_TIME);
